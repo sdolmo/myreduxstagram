@@ -6,7 +6,6 @@
 // 2. copy of current state
 
 function comments(state = [], action) {
-  console.log(state, action);
   return state;
 }
 
