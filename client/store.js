@@ -15,8 +15,11 @@ const defaultState = {
   comments
 };
 
+const enhancers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : (f) => f
+);
 
-const store = createStore(rootReducer, defaultState);
+const store = createStore(rootReducer, defaultState, enhancers);
 
 // This allows react router to keep track of the browsing history from page to page
 export const history = syncHistoryWithStore(browserHistory, store);
