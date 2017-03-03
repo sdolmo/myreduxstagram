@@ -3,12 +3,16 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 import Main from './Main';
 
+// here the component, App, will subscribe to the Redux store updates.
+// Anytime the store is updated mapStateToProps will be called.
+// Result must be a plain object, which will be merged into App's props.
 function mapStateToProps(state) {
   return {
     posts: state.posts,
     comments: state.comments
   }
 }
+
 
 function mapDispachToProps(dispatch) {
     return bindActionCreators(actionCreators, dispatch);
